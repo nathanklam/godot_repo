@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg47nu11u8a7s"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1_x5hrn"]
+[ext_resource type="PackedScene" uid="uid://caru1wp14a6kw" path="res://npc test.tscn" id="2_ejh7r"]
+
+[node name="Shop" type="Node2D"]
+script = ExtResource("1_x5hrn")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_ejh7r")]
+position = Vector2(1011, 446)
