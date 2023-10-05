@@ -1,2 +1,1 @@
-Game Project
-Currently not up to date
+Game Project, currently not up to date
