@@ -9,12 +9,12 @@ func _process(delta):
 	pass
 
 func _on_to_shop_pressed():
-	SceneTransition.change_scene_to_file("res://scenes/shop.tscn")
 	$input_stop.show()
+	SceneTransition.change_scene_to_file("res://scenes/shop.tscn")
 	
 func _on_to_level_select_pressed():
-	SceneTransition.change_scene_to_file("res://scenes/level_select.tscn")
 	$input_stop.show()
+	SceneTransition.change_scene_to_file("res://scenes/level_select.tscn")
 
 
 

@@ -9,12 +9,13 @@
 script = ExtResource("1_rmel5")
 
 [node name="BackgroundIdea" type="Sprite2D" parent="."]
-position = Vector2(964.113, 499.197)
-scale = Vector2(1.31452, 1.20723)
+position = Vector2(933, 420)
+scale = Vector2(1.58318, 1.54725)
 texture = ExtResource("2_t0kvg")
 
 [node name="AnotherNpc" type="Sprite2D" parent="."]
-position = Vector2(533, 683)
+position = Vector2(495, 609)
+scale = Vector2(1.55432, 1.52614)
 texture = ExtResource("3_ly56g")
 
 [node name="Label" type="Label" parent="AnotherNpc"]

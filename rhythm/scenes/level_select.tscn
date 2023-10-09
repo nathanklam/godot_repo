@@ -34,9 +34,6 @@ offset_bottom = 632.0
 theme_override_font_sizes/font_size = 25
 text = "tutorial i guess???"
 
-[node name="input_stop" parent="." instance=ExtResource("3_qjwk2")]
-visible = false
-
 [node name="level_1" type="Button" parent="."]
 offset_left = 358.0
 offset_top = 684.0
@@ -45,6 +42,9 @@ offset_bottom = 844.0
 theme_override_font_sizes/font_size = 25
 text = "locked a.k.a. I didn't make this yet
 "
+
+[node name="input_stop" parent="." instance=ExtResource("3_qjwk2")]
+visible = false
 
 [connection signal="pressed" from="to_lobby" to="." method="_on_to_lobby_pressed"]
 [connection signal="pressed" from="to_tutorial" to="." method="_on_to_tutorial_pressed"]
