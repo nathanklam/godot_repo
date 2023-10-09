@@ -24,12 +24,12 @@ anchor_left = -1.059
 anchor_top = -0.316
 anchor_right = -1.059
 anchor_bottom = -0.316
-offset_left = 428.895
-offset_top = 193.392
-offset_right = 533.895
-offset_bottom = 245.392
-text = "I'm just a 
-placeholder :("
+offset_left = 313.732
+offset_top = 182.253
+offset_right = 581.732
+offset_bottom = 260.253
+text = "I'm just a placeholder :(
+im supposed to be the shopkeeper"
 
 [node name="to_level_select" type="Button" parent="."]
 top_level = true

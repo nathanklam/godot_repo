@@ -28,11 +28,11 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_rr2fm")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 1519.0
-offset_top = 606.0
-offset_right = 1791.0
-offset_bottom = 678.0
-text = "i have nothing to sell you for now :/"
+offset_left = 1428.0
+offset_top = 566.0
+offset_right = 1892.0
+offset_bottom = 638.0
+text = "greetings, unfortunately i have nothing to sell you for now :/"
 
 [node name="input_stop" parent="." instance=ExtResource("3_6nyop")]
 visible = false
