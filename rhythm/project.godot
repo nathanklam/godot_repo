@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SceneTransition="*res://scenes/transition_screen.tscn"
+SceneTransition="*res://scenes/overlays/transition_screen.tscn"
 Globals="*res://scripts/globals.gd"
-SoundFx="*res://scripts/soundfx.gd"
+SoundFx="*res://audio/sound effects/sound_fx.tscn"
 
 [display]
 

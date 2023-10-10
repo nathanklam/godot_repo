@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu20wn0ny8kn4"]
+
+[ext_resource type="Script" path="res://scripts/lose_screen.gd" id="1_01lyj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35gat"]
+
+[node name="lose_screen" type="Node2D"]
+process_mode = 2
+script = ExtResource("1_01lyj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_35gat")
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(1, 0, 0, 0.341176)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 810.0
+offset_top = 450.0
+offset_right = 1110.0
+offset_bottom = 550.0
+theme_override_font_sizes/font_size = 60
+text = "you lose :("
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="to_level_select" type="Button" parent="."]
+offset_left = 810.0
+offset_top = 600.0
+offset_right = 1110.0
+offset_bottom = 700.0
+action_mode = 0
+text = "return to level select
+"

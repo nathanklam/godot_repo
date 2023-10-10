@@ -48,3 +48,4 @@ visible = false
 
 [connection signal="pressed" from="to_lobby" to="." method="_on_to_lobby_pressed"]
 [connection signal="pressed" from="to_tutorial" to="." method="_on_to_tutorial_pressed"]
+[connection signal="pressed" from="level_1" to="." method="_on_level_1_pressed"]

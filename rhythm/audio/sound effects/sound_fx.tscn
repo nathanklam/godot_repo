@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://br56n42njy1fn"]
+
+[ext_resource type="Script" path="res://scripts/soundfx.gd" id="1_2no8x"]
+[ext_resource type="AudioStream" uid="uid://oxutekgbrdik" path="res://audio/sound effects/click.wav" id="2_jjwpq"]
+[ext_resource type="AudioStream" uid="uid://dhwhoh74futgf" path="res://audio/sound effects/error.mp3" id="3_wiyrg"]
+
+[node name="SoundFx" type="Node"]
+script = ExtResource("1_2no8x")
+
+[node name="click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_jjwpq")
+
+[node name="note_miss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_wiyrg")
+
+[node name="note_hit" type="AudioStreamPlayer" parent="."]

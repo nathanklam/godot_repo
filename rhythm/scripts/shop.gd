@@ -9,6 +9,7 @@ func _process(delta):
 	pass
 
 func _on_to_lobby_pressed():
+	SoundFx.button_click()
 	SceneTransition.change_scene_to_file("res://scenes/lobby.tscn")
 	$input_stop.show()
 	
