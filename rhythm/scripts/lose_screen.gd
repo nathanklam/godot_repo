@@ -10,3 +10,7 @@ func _ready():
 func _process(delta):
 	pass
 
+func to_level_select():
+	SoundFx.button_click()
+	SceneTransition.change_scene_to_file("res://scenes/level_select.tscn")
+	BgMusic.play()

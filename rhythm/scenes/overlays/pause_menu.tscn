@@ -4,9 +4,10 @@
 
 [node name="pause_menu" type="Node2D"]
 process_mode = 2
+visible = false
 script = ExtResource("1_ij53t")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="overlay" type="ColorRect" parent="."]
 modulate = Color(0.470588, 0.470588, 0.470588, 0.513726)
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -18,7 +19,7 @@ offset_right = 1110.0
 offset_bottom = 620.0
 text = "return/continue :)"
 
-[node name="Label" type="Label" parent="."]
+[node name="paused" type="Label" parent="."]
 offset_left = 760.0
 offset_top = 400.0
 offset_right = 1160.0
@@ -34,3 +35,13 @@ offset_top = 650.0
 offset_right = 1060.0
 offset_bottom = 750.0
 text = "quit"
+
+[node name="countdown" type="Label" parent="."]
+offset_left = 760.0
+offset_top = 350.0
+offset_right = 1160.0
+offset_bottom = 550.0
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5qnq43qr7cy0"]
 
 [ext_resource type="Script" path="res://scripts/level_select.gd" id="1_f484v"]
-[ext_resource type="Texture2D" uid="uid://6pg6mmvun46s" path="res://assets/base enemy idea.png" id="2_xjiwx"]
+[ext_resource type="Texture2D" uid="uid://6pg6mmvun46s" path="res://assets/character assets/base enemy idea.png" id="2_gk6mv"]
 [ext_resource type="PackedScene" uid="uid://cfbf7dn04kvg6" path="res://scenes/input_stop.tscn" id="3_qjwk2"]
 
 [node name="level_select" type="Node2D"]
@@ -9,7 +9,7 @@ script = ExtResource("1_f484v")
 
 [node name="BaseEnemyIdea" type="Sprite2D" parent="."]
 position = Vector2(1663, 757.5)
-texture = ExtResource("2_xjiwx")
+texture = ExtResource("2_gk6mv")
 
 [node name="Label" type="Label" parent="BaseEnemyIdea"]
 offset_left = -298.0

@@ -12,5 +12,6 @@ stream = ExtResource("2_jjwpq")
 
 [node name="note_miss" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_wiyrg")
+volume_db = -10.0
 
 [node name="note_hit" type="AudioStreamPlayer" parent="."]

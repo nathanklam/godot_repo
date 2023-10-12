@@ -6,6 +6,7 @@
 
 [node name="lose_screen" type="Node2D"]
 process_mode = 2
+visible = false
 script = ExtResource("1_01lyj")
 
 [node name="ColorRect" type="ColorRect" parent="."]

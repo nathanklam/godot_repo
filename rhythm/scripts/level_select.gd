@@ -18,9 +18,10 @@ func _on_to_tutorial_pressed():
 	SoundFx.button_click()
 	$input_stop.show()
 	SceneTransition.change_scene_to_file("res://scenes/tutorial.tscn")
-
+	await get_tree().create_timer(0.5).timeout
+	BgMusic.stop()
 
 
 func _on_level_1_pressed():
-	#SoundFx.note_miss()
-	pass
+	SoundFx.note_miss()
+

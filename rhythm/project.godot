@@ -20,6 +20,9 @@ config/icon="res://icon.svg"
 SceneTransition="*res://scenes/overlays/transition_screen.tscn"
 Globals="*res://scripts/globals.gd"
 SoundFx="*res://audio/sound effects/sound_fx.tscn"
+BgMusic="*res://audio/bgm/bgm.tscn"
+PauseMenu="*res://scenes/overlays/pause_menu.tscn"
+LoseScreen="*res://scenes/overlays/lose_screen.tscn"
 
 [display]
 

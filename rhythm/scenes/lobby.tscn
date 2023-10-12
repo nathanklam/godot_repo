@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://2mgeno70652u"]
+[gd_scene load_steps=6 format=3 uid="uid://2mgeno70652u"]
 
 [ext_resource type="Script" path="res://scripts/lobby.gd" id="1_rmel5"]
-[ext_resource type="Texture2D" uid="uid://dmkbxh0llmy0i" path="res://assets/background idea.jpg" id="2_t0kvg"]
-[ext_resource type="Texture2D" uid="uid://02goy6wxsjng" path="res://assets/another npc.png" id="3_ly56g"]
+[ext_resource type="Texture2D" uid="uid://cffv76h2iytdc" path="res://assets/image.png" id="2_xovic"]
+[ext_resource type="Texture2D" uid="uid://02goy6wxsjng" path="res://assets/character assets/another npc.png" id="3_n4wnq"]
 [ext_resource type="PackedScene" uid="uid://cfbf7dn04kvg6" path="res://scenes/input_stop.tscn" id="4_kptak"]
+[ext_resource type="Texture2D" uid="uid://dmqe88wsd8bxu" path="res://assets/character assets/Eternal Rest.png" id="4_oh8u6"]
 
 [node name="lobby" type="Node2D"]
 script = ExtResource("1_rmel5")
@@ -11,12 +12,19 @@ script = ExtResource("1_rmel5")
 [node name="BackgroundIdea" type="Sprite2D" parent="."]
 position = Vector2(933, 420)
 scale = Vector2(1.58318, 1.54725)
-texture = ExtResource("2_t0kvg")
+texture = ExtResource("2_xovic")
 
 [node name="AnotherNpc" type="Sprite2D" parent="."]
 position = Vector2(495, 609)
 scale = Vector2(1.55432, 1.52614)
-texture = ExtResource("3_ly56g")
+texture = ExtResource("3_n4wnq")
+
+[node name="EternalRest" type="Sprite2D" parent="AnotherNpc"]
+position = Vector2(5.07355, -17.7088)
+rotation = 2.77599
+scale = Vector2(1.2897, -1.30758)
+skew = 0.0120518
+texture = ExtResource("4_oh8u6")
 
 [node name="Label" type="Label" parent="AnotherNpc"]
 anchors_preset = -1
@@ -24,12 +32,14 @@ anchor_left = -1.059
 anchor_top = -0.316
 anchor_right = -1.059
 anchor_bottom = -0.316
-offset_left = 313.732
-offset_top = 182.253
-offset_right = 581.732
-offset_bottom = 260.253
+offset_left = 298.291
+offset_top = 391.277
+offset_right = 566.291
+offset_bottom = 469.277
 text = "I'm just a placeholder :(
-im supposed to be the shopkeeper"
+im supposed to be the shopkeeper
+also why do i have a weapon
+(totally not going to be a secret)"
 
 [node name="to_level_select" type="Button" parent="."]
 top_level = true

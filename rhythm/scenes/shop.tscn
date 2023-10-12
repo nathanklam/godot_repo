@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/shop.gd" id="1_v5mvo"]
 [ext_resource type="Texture2D" uid="uid://b2tm06x01kfia" path="res://assets/background idea 2.jpg" id="2_htuob"]
-[ext_resource type="Texture2D" uid="uid://02goy6wxsjng" path="res://assets/another npc.png" id="2_rr2fm"]
+[ext_resource type="Texture2D" uid="uid://02goy6wxsjng" path="res://assets/character assets/another npc.png" id="3_1tqpf"]
 [ext_resource type="PackedScene" uid="uid://cfbf7dn04kvg6" path="res://scenes/input_stop.tscn" id="3_6nyop"]
 
 [node name="shop" type="Node2D"]
@@ -25,7 +25,7 @@ text = "<"
 [node name="AnotherNpc" type="Sprite2D" parent="."]
 position = Vector2(1649, 604)
 scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_rr2fm")
+texture = ExtResource("3_1tqpf")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 1428.0
