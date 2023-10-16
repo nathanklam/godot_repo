@@ -24,3 +24,18 @@ offset_top = -131.0
 offset_right = 116.0
 offset_bottom = -105.0
 text = "I am falling to test pausing :))"
+
+[node name="healthbar" type="ProgressBar" parent="."]
+offset_left = -92.0
+offset_top = 115.0
+offset_right = 93.0
+offset_bottom = 142.0
+max_value = 5.0
+step = 1.0
+show_percentage = false
+
+[node name="healthlabel" type="Label" parent="."]
+offset_left = -21.0
+offset_top = 147.0
+offset_right = 19.0
+offset_bottom = 170.0
