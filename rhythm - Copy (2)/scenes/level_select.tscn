@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5qnq43qr7cy0"]
+
+[ext_resource type="Script" path="res://scripts/level_select.gd" id="1_f484v"]
+[ext_resource type="Texture2D" uid="uid://6pg6mmvun46s" path="res://assets/character assets/base enemy idea.png" id="2_gk6mv"]
+[ext_resource type="PackedScene" uid="uid://cfbf7dn04kvg6" path="res://scenes/overlays/input_stop.tscn" id="3_qjwk2"]
+[ext_resource type="PackedScene" uid="uid://8dcqstja7snp" path="res://scenes/overlays/details.tscn" id="4_4ktyu"]
+
+[node name="level_select" type="Node2D"]
+script = ExtResource("1_f484v")
+
+[node name="BaseEnemyIdea" type="Sprite2D" parent="."]
+position = Vector2(1663, 757.5)
+texture = ExtResource("2_gk6mv")
+
+[node name="Label" type="Label" parent="BaseEnemyIdea"]
+offset_left = -298.0
+offset_top = -171.5
+offset_right = -112.0
+offset_bottom = -145.5
+text = "i shouldn't even be here"
+
+[node name="to_lobby" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 220.0
+offset_bottom = 97.0
+theme_override_font_sizes/font_size = 50
+text = "<"
+
+[node name="to_tutorial" type="Button" parent="."]
+offset_left = 362.0
+offset_top = 472.0
+offset_right = 942.0
+offset_bottom = 632.0
+theme_override_font_sizes/font_size = 25
+text = "tutorial i guess???"
+
+[node name="level_1" type="Button" parent="."]
+offset_left = 358.0
+offset_top = 684.0
+offset_right = 938.0
+offset_bottom = 844.0
+theme_override_font_sizes/font_size = 25
+text = "locked a.k.a. I didn't make this yet
+"
+
+[node name="input_stop" parent="." instance=ExtResource("3_qjwk2")]
+visible = false
+
+[node name="details" parent="." instance=ExtResource("4_4ktyu")]
+visible = false
+
+[connection signal="pressed" from="to_lobby" to="." method="_on_to_lobby_pressed"]
+[connection signal="pressed" from="to_tutorial" to="." method="_on_to_tutorial_pressed"]
+[connection signal="pressed" from="level_1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="details/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="details/close" to="." method="_on_close_pressed"]
+
+[editable path="details"]
