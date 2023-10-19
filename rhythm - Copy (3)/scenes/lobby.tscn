@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://2mgeno70652u"]
+
+[ext_resource type="Script" path="res://scripts/lobby.gd" id="1_rmel5"]
+[ext_resource type="Texture2D" uid="uid://cffv76h2iytdc" path="res://assets/image.png" id="2_xovic"]
+[ext_resource type="Texture2D" uid="uid://02goy6wxsjng" path="res://assets/character assets/another npc.png" id="3_n4wnq"]
+[ext_resource type="PackedScene" uid="uid://cfbf7dn04kvg6" path="res://scenes/overlays/input_stop.tscn" id="4_kptak"]
+
+[node name="lobby" type="Node2D"]
+script = ExtResource("1_rmel5")
+
+[node name="BackgroundIdea" type="Sprite2D" parent="."]
+position = Vector2(933, 420)
+scale = Vector2(1.58318, 1.54725)
+texture = ExtResource("2_xovic")
+
+[node name="AnotherNpc" type="Sprite2D" parent="."]
+position = Vector2(495, 609)
+scale = Vector2(1.55432, 1.52614)
+texture = ExtResource("3_n4wnq")
+
+[node name="Label" type="Label" parent="AnotherNpc"]
+anchors_preset = -1
+anchor_left = -1.059
+anchor_top = -0.316
+anchor_right = -1.059
+anchor_bottom = -0.316
+offset_left = 298.291
+offset_top = 391.277
+offset_right = 566.291
+offset_bottom = 469.277
+text = "I'm just a placeholder :(
+im supposed to be the shopkeeper
+"
+
+[node name="to_level_select" type="Button" parent="."]
+top_level = true
+offset_left = 1151.0
+offset_top = 253.0
+offset_right = 1751.0
+offset_bottom = 453.0
+theme_override_font_sizes/font_size = 25
+text = "Level Select"
+
+[node name="to_shop" type="Button" parent="."]
+top_level = true
+offset_left = 1148.0
+offset_top = 549.0
+offset_right = 1748.0
+offset_bottom = 749.0
+theme_override_font_sizes/font_size = 25
+text = "Shop (or whatever it's going to be)"
+
+[node name="input_stop" parent="." instance=ExtResource("4_kptak")]
+visible = false
+
+[connection signal="pressed" from="to_level_select" to="." method="_on_to_level_select_pressed"]
+[connection signal="pressed" from="to_shop" to="." method="_on_to_shop_pressed"]
