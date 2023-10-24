@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn4uyancteish"]
+[gd_scene load_steps=10 format=3 uid="uid://cn4uyancteish"]
 
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_a6t5q"]
 [ext_resource type="Texture2D" uid="uid://k58pvqu00nth" path="res://assets/background idea 3.jpg" id="2_at0kb"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cu20wn0ny8kn4" path="res://scenes/overlays/lose_screen.tscn" id="4_r7gkh"]
 [ext_resource type="PackedScene" uid="uid://cfbf7dn04kvg6" path="res://scenes/overlays/input_stop.tscn" id="5_vhlft"]
 [ext_resource type="PackedScene" uid="uid://cix0bkb8n46m" path="res://scenes/overlays/win_screen.tscn" id="6_e1ulk"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="8_cvqey"]
 
 [sub_resource type="GDScript" id="GDScript_77pu6"]
 script/source = "extends Button
@@ -70,6 +71,12 @@ visible = false
 
 [node name="Timer" type="Timer" parent="."]
 
+[node name="MidiPlayer" parent="." instance=ExtResource("8_cvqey")]
+file = "res://addons/midi/海愿 test.mid"
+playing = true
+volume_db = 0.0
+soundfont = "res://addons/Essential Keys-sforzando-v9.6.sf2"
+
 [connection signal="dead" from="CharacterBody2D" to="." method="_on_character_body_2d_dead"]
 [connection signal="pressed" from="pause" to="." method="pause"]
 [connection signal="pressed" from="pause_menu/continue" to="." method="unpause"]
@@ -77,6 +84,7 @@ visible = false
 [connection signal="timeout" from="pause_menu/Timer" to="pause_menu" method="_on_timer_timeout"]
 [connection signal="pressed" from="lose_screen/to_level_select" to="." method="_on_to_level_select_pressed"]
 [connection signal="pressed" from="win_screen/to_level_select" to="." method="_on_to_level_select_pressed"]
+[connection signal="midi_event" from="MidiPlayer" to="." method="_on_midi_player_midi_event"]
 
 [editable path="CharacterBody2D"]
 [editable path="pause_menu"]
