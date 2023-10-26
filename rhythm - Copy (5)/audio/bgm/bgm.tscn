@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2tns47wlehv2"]
+
+[ext_resource type="AudioStream" uid="uid://8o58vm68w3f7" path="res://audio/bgm/光影 (not original work).wav" id="1_n5muf"]
+[ext_resource type="Script" path="res://scripts/bgm.gd" id="1_woyfg"]
+[ext_resource type="AudioStream" uid="uid://ys0jjjhu3iiq" path="res://audio/bgm/test.wav" id="3_l6k81"]
+
+[node name="bgm" type="Node"]
+script = ExtResource("1_woyfg")
+
+[node name="lobby_bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_n5muf")
+volume_db = -5.0
+autoplay = true
+
+[node name="battle1_bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_l6k81")
