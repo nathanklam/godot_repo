@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bavriggd1q3nm"]
+
+[ext_resource type="Texture2D" uid="uid://dd6ht8lfon04y" path="res://assets/circle.png" id="1_abqub"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_065gp"]
+radius = 1.21655
+
+[node name="Node2D" type="Area2D"]
+scale = Vector2(5, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -0.200001)
+scale = Vector2(0.103516, 0.103516)
+texture = ExtResource("1_abqub")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_065gp")

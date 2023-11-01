@@ -12,9 +12,11 @@ func _physics_process(delta):
 		velocity.y += (gravity * delta)/1000
 	move_and_slide()
 
-var MAX_HEALTH = 5
+var MAX_HEALTH = 100
 var health = MAX_HEALTH
 signal dead
+signal hit
+
 	
 func _ready() -> void:
 	update_health_ui()
@@ -32,12 +34,14 @@ func set_health_bar() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
-		damage()
+		emit_signal("hit")
+
 	
 func damage() -> void:
 	health -= 1
 	print(health)
 	update_health_ui()
+	get_tree().create_timer(0.5).timeout
 	if health <= 0:
 		emit_signal("dead")
 		

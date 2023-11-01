@@ -1,24 +1,26 @@
 extends Node2D
 
+var battleBg
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	BgMusic.battle1_bg_play()
+	var battleBg = BgMusic.get_node("battle1_bg")
+	self.battleBg = battleBg
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-	#var time = BgMusic.get_playback_position() + AudioServer.get_time_since_last_mix()
-	# check how to get it to refer to lobby_bg of the bgm node
+	var time = battleBg.get_playback_position() + AudioServer.get_time_since_last_mix()
 	
 	# Compensate for output latency.
-	#time -= AudioServer.get_output_latency()
-	#print("Time is: ", time)
+	time -= AudioServer.get_output_latency()
+	print("Time is: ", time)
+
 	
 #  below are to be copied onto different levels. should probably make this part of the pause script but yeah
 func pause():
 	get_tree().paused = true
 	$pause_menu.show()
-	
+#can probably get the rest to be on its own scene
 func unpause():
 	$pause_menu/continue.hide()
 	$pause_menu/paused.hide()
@@ -60,11 +62,26 @@ func _on_character_body_2d_dead():
 
 var x = 0
 var y = 0
+#rename to separate
+var can_hit = false
+
 func _on_midi_player_midi_event(channel, event):
 	x += 1
 	print("enemy", x)
 
 func _on_midi_player_2_midi_event(channel, event):
-	y += 1
-	print("player", y) 
+	#y += 1
+	#print("player", y) 
+	#this is so stupid but it "works" hahahahaha
+	#only works after though, no time before
+	can_hit = true
+	print("hit")
+	await get_tree().create_timer(0.3).timeout
+	can_hit = false
+	print("unhit") 
 
+
+func _on_tutorial_enemy_hit():
+	if can_hit == true:
+		#have to make sure this can only happen once
+		$tutorial_enemy.damage()

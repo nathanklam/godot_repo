@@ -53,10 +53,10 @@ text = "pause"
 script = SubResource("GDScript_77pu6")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 766.0
-offset_top = 511.0
-offset_right = 1255.0
-offset_bottom = 577.0
+offset_left = 779.0
+offset_top = 675.0
+offset_right = 1268.0
+offset_bottom = 741.0
 text = "i can't hurt you yet you can hurt me :(
 (not coded in yet)"
 
@@ -81,7 +81,17 @@ file = "res://test-player.mid"
 playing = true
 load_all_voices_from_soundfont = false
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 301.0
+offset_top = 89.0
+offset_right = 1678.0
+offset_bottom = 205.0
+text = "top track uses whatever on the right side of the keyboard
+bottom track uses whatever on the left side of the keyboard"
+horizontal_alignment = 1
+
 [connection signal="dead" from="tutorial_enemy" to="." method="_on_character_body_2d_dead"]
+[connection signal="hit" from="tutorial_enemy" to="." method="_on_tutorial_enemy_hit"]
 [connection signal="pressed" from="pause" to="." method="pause"]
 [connection signal="pressed" from="pause_menu/continue" to="." method="unpause"]
 [connection signal="pressed" from="pause_menu/quit" to="." method="_on_quit_pressed"]

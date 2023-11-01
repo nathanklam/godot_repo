@@ -20,3 +20,5 @@ func battle1_bg_play():
 	
 func battle1_bg_stop():
 	$battle1_bg.stop()
+	
+
