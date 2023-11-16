@@ -1,0 +1,159 @@
+[gd_scene load_steps=13 format=3 uid="uid://cn4uyancteish"]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_a6t5q"]
+[ext_resource type="Texture2D" uid="uid://k58pvqu00nth" path="res://assets/background idea 3.jpg" id="2_at0kb"]
+[ext_resource type="PackedScene" uid="uid://dusui2olcufm0" path="res://assets/character assets/main_character.tscn" id="2_olq50"]
+[ext_resource type="PackedScene" uid="uid://d1c6ixrpahnda" path="res://scenes/overlays/pause_menu.tscn" id="3_hexct"]
+[ext_resource type="PackedScene" uid="uid://dxsptite5u0c0" path="res://assets/character assets/character test.tscn" id="4_04kye"]
+[ext_resource type="PackedScene" uid="uid://cu20wn0ny8kn4" path="res://scenes/overlays/lose_screen.tscn" id="4_r7gkh"]
+[ext_resource type="PackedScene" uid="uid://cfbf7dn04kvg6" path="res://scenes/overlays/input_stop.tscn" id="5_vhlft"]
+[ext_resource type="PackedScene" uid="uid://cix0bkb8n46m" path="res://scenes/overlays/win_screen.tscn" id="6_e1ulk"]
+[ext_resource type="PackedScene" uid="uid://cuyd1qv0pn26e" path="res://addons/midi/MidiPlayer.tscn" id="8_cvqey"]
+[ext_resource type="Texture2D" uid="uid://dsm085f4md16s" path="res://assets/line.png" id="9_rj4wt"]
+
+[sub_resource type="GDScript" id="GDScript_77pu6"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl57e"]
+size = Vector2(23, 117.5)
+
+[node name="tutorial" type="Node2D"]
+script = ExtResource("1_a6t5q")
+
+[node name="bg" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(959, 541)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("2_at0kb")
+
+[node name="main_character" parent="." instance=ExtResource("2_olq50")]
+position = Vector2(522, 742)
+
+[node name="tutorial_enemy" parent="." instance=ExtResource("4_04kye")]
+position = Vector2(1405, 740)
+
+[node name="Label" parent="tutorial_enemy" index="2"]
+text = "i am angry :("
+metadata/_edit_use_anchors_ = true
+
+[node name="healthbar" parent="tutorial_enemy" index="3"]
+metadata/_edit_use_anchors_ = true
+
+[node name="healthlabel" parent="tutorial_enemy" index="4"]
+metadata/_edit_use_anchors_ = true
+
+[node name="pause" type="Button" parent="."]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 94.0
+offset_bottom = 88.0
+text = "pause"
+script = SubResource("GDScript_77pu6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 779.0
+offset_top = 675.0
+offset_right = 1268.0
+offset_bottom = 741.0
+text = "i can't hurt you yet you can hurt me :(
+(not coded in yet)"
+
+[node name="input_stop" parent="." instance=ExtResource("5_vhlft")]
+visible = false
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="MidiPlayerEnemy" parent="." instance=ExtResource("8_cvqey")]
+file = "res://midi files/test-enemy.mid"
+loop = true
+load_all_voices_from_soundfont = false
+
+[node name="MidiPlayerEnemy2" parent="." instance=ExtResource("8_cvqey")]
+file = "res://test-enemy.mid"
+loop = true
+load_all_voices_from_soundfont = false
+
+[node name="MidiPlayerPlayer" parent="." instance=ExtResource("8_cvqey")]
+file = "res://midi files/test-player.mid"
+loop = true
+load_all_voices_from_soundfont = false
+
+[node name="MidiPlayerPlayer2" parent="." instance=ExtResource("8_cvqey")]
+file = "res://test-player.mid"
+loop = true
+load_all_voices_from_soundfont = false
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 301.0
+offset_top = 89.0
+offset_right = 1678.0
+offset_bottom = 205.0
+text = "top track uses whatever on the right side of the keyboard (represents enemy attacks)
+bottom track uses whatever on the left side of the keyboard (represents your attacks)"
+horizontal_alignment = 1
+
+[node name="pause_menu" parent="." instance=ExtResource("3_hexct")]
+
+[node name="lose_screen" parent="." instance=ExtResource("4_r7gkh")]
+
+[node name="win_screen" parent="." instance=ExtResource("6_e1ulk")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(535, 413)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-193.5, -110.5)
+shape = SubResource("RectangleShape2D_wl57e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-73, -107)
+scale = Vector2(0.576484, 0.10375)
+texture = ExtResource("9_rj4wt")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(538, 177)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-195, 22)
+shape = SubResource("RectangleShape2D_wl57e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D2"]
+position = Vector2(-77, 15)
+scale = Vector2(0.576484, 0.09625)
+texture = ExtResource("9_rj4wt")
+
+[connection signal="dead" from="main_character" to="." method="_on_main_character_dead"]
+[connection signal="hit" from="main_character" to="." method="_on_main_character_hit"]
+[connection signal="dead" from="tutorial_enemy" to="." method="_on_character_body_2d_dead"]
+[connection signal="hit" from="tutorial_enemy" to="." method="_on_tutorial_enemy_hit"]
+[connection signal="pressed" from="pause" to="." method="pause"]
+[connection signal="midi_event" from="MidiPlayerEnemy" to="." method="_on_midi_player_enemy_midi_event"]
+[connection signal="midi_event" from="MidiPlayerPlayer" to="." method="_on_midi_player_player_midi_event"]
+[connection signal="pressed" from="pause_menu/continue" to="." method="unpause"]
+[connection signal="pressed" from="pause_menu/quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="pause_menu/Timer" to="pause_menu" method="_on_timer_timeout"]
+[connection signal="pressed" from="lose_screen/to_level_select" to="." method="_on_to_level_select_pressed"]
+[connection signal="pressed" from="lose_screen/to_level_select" to="lose_screen" method="to_level_select"]
+[connection signal="pressed" from="win_screen/to_level_select" to="." method="_on_to_level_select_pressed"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d2_body_exited"]
+
+[editable path="main_character"]
+[editable path="tutorial_enemy"]
+[editable path="pause_menu"]
+[editable path="lose_screen"]
+[editable path="win_screen"]
