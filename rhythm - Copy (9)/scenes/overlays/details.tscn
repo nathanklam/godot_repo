@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://8dcqstja7snp"]
+
+[node name="details" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 960.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.113725, 0.113725, 0.113725, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1181.0
+offset_top = 207.0
+offset_right = 1683.0
+offset_bottom = 398.0
+text = "This is the tutorial :)
+comically terrible"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1088.0
+offset_top = 724.0
+offset_right = 1792.0
+offset_bottom = 958.0
+text = "start"
+
+[node name="close" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 960.0
+offset_bottom = 1080.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
