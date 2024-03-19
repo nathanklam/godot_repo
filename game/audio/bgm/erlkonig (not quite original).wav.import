@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://kn3hndegky7w"
+path="res://.godot/imported/erlkonig (not quite original).wav-d24481ae91c570c9f0bc13fc172eb2fd.sample"
+
+[deps]
+
+source_file="res://audio/bgm/erlkonig (not quite original).wav"
+dest_files=["res://.godot/imported/erlkonig (not quite original).wav-d24481ae91c570c9f0bc13fc172eb2fd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
