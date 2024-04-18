@@ -1,9 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2tns47wlehv2"]
+[gd_scene load_steps=5 format=3 uid="uid://d2tns47wlehv2"]
 
-[ext_resource type="AudioStream" uid="uid://8o58vm68w3f7" path="res://audio/bgm/光影 (not original work).wav" id="1_n5muf"]
 [ext_resource type="Script" path="res://scripts/bgm.gd" id="1_woyfg"]
+[ext_resource type="AudioStream" uid="uid://8o58vm68w3f7" path="res://audio/bgm/not original work.wav" id="2_llx38"]
+[ext_resource type="AudioStream" uid="uid://ys0jjjhu3iiq" path="res://audio/bgm/test.wav" id="3_l6k81"]
+[ext_resource type="AudioStream" uid="uid://kn3hndegky7w" path="res://audio/bgm/erlkonig.wav" id="4_37oep"]
 
-[node name="bgm" type="AudioStreamPlayer"]
-stream = ExtResource("1_n5muf")
-autoplay = true
+[node name="bgm" type="Node"]
 script = ExtResource("1_woyfg")
+
+[node name="lobby_bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_llx38")
+volume_db = -5.0
+autoplay = true
+
+[node name="battle1_bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_l6k81")
+
+[node name="secret_battle_bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_37oep")

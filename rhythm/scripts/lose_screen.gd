@@ -12,5 +12,7 @@ func _process(delta):
 
 func to_level_select():
 	SoundFx.button_click()
+	BgMusic.battle1_bg_stop()
 	SceneTransition.change_scene_to_file("res://scenes/level_select.tscn")
-	BgMusic.play()
+	BgMusic.lobby_bg_play()
+
