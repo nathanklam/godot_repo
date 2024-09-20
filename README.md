@@ -1,3 +1,3 @@
 
 Google doc file of ideas and notes: https://docs.google.com/document/d/10v2uQ0iKJTqyNF9rKCompdcEVe5cerR3k0GReetKixo/edit
-Multiple versions because moving things around messes up what appears here. making new complete versions each time so it will still work. Note that anything that remotely sounds like good music is not my original work, in a supposed final product it will be replaced with my own creations.
+There are multiple versions here as I couldn't find anything that would directly connect Godot with Github, so when files are moved around it isn't reflected properly.
